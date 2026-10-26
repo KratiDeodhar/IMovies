@@ -7,24 +7,6 @@ DOC fIle: https://docs.google.com/document/d/1EAEKfR09qooBTI4pvn6V6UyQjWdpzTA9wK
 
 🏗 System ArchitectureThe application follows a standard 3-Tier MERN Architecture:Frontend: React (v18+) SPA powered by Vite for rapid component rendering and state management.Backend: Node.js & Express RESTful API processing authentication and booking transactions.Database: MongoDB persistence managed via Mongoose ODM models (User and Booking).
 
-
-+-------------------------------------------------------------------+
-|                        CLIENT LAYER (React / Vite)                |
-+-------------------------------------------------------------------+
-                                  |
-                                  | HTTP / REST API (Axios)
-                                  v
-+-------------------------------------------------------------------+
-|                      SERVER LAYER (Node.js / Express)             |
-+-------------------------------------------------------------------+
-                                  |
-                                  | Mongoose ODM / MongoDB Driver
-                                  v
-+-------------------------------------------------------------------+
-|                          DATABASE LAYER (MongoDB)                 |
-+-------------------------------------------------------------------+
-
-
 📁 Project Folder StructureIMovies/
 ├── backend/
 │   ├── models/
