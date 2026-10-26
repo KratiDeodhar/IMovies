@@ -1,0 +1,1597 @@
+
+/* =========================================
+   IMOVIES - COMPLETE WEBSITE REDESIGN
+   Theme: Dark cinema + caramel + sage green
+========================================= */
+
+:root {
+  --bg: #0c0e14;
+  --surface: #151821;
+  --surface-light: #202431;
+  --gold: #c9996b;
+  --gold-light: #e0b58e;
+  --green: #5c766d;
+  --text: #f5f3f0;
+  --muted: #a6a9b5;
+  --border: rgba(255, 255, 255, 0.1);
+  --danger: #ed7777;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+body,
+button,
+input,
+select {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.accent {
+  color: var(--gold-light);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  min-height: 76px;
+  padding: 16px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(12, 14, 20, 0.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold-light);
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.logo svg {
+  width: 25px;
+  height: 25px;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar nav a {
+  color: #c6c7ce;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+  color: var(--gold-light);
+}
+
+.navbar .nav-button {
+  padding: 11px 23px;
+  border: 1px solid var(--gold);
+  border-radius: 9px;
+  background: var(--gold);
+  color: #171923;
+  font-size: 13px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.navbar .nav-button:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: #171923;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 9px;
+  background: var(--gold);
+  color: #171923;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: var(--gold-light);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.text-button {
+  padding: 5px 0;
+  border: none;
+  background: transparent;
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text-button:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.back-button {
+  padding: 10px 15px;
+  margin-bottom: 35px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(20, 22, 30, 0.8);
+  color: white;
+  font-size: 12px;
+}
+
+.back-button:hover {
+  border-color: var(--gold);
+}
+
+/* =========================================
+   HERO BANNER
+========================================= */
+
+.hero.cinema-hero {
+  min-height: 480px;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center 35%;
+  border-bottom: 1px solid var(--border);
+}
+
+.cinema-hero-copy {
+  max-width: 580px;
+  position: relative;
+  z-index: 1;
+}
+
+.cinema-hero-copy h1 {
+  margin: 15px 0;
+  color: white;
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+}
+
+.cinema-hero-copy p {
+  max-width: 500px;
+  color: #d0d0d7;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.cinema-hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 23px 0;
+  color: #e5e4e5;
+  font-size: 12px;
+}
+
+.cinema-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cinema-hero-meta svg {
+  color: #ffc84b;
+}
+
+.cinema-hero-dots {
+  display: flex;
+  gap: 7px;
+  position: absolute;
+  bottom: 28px;
+  left: 8%;
+}
+
+.cinema-hero-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 10px;
+  background: #656873;
+}
+
+.cinema-hero-dots span.active {
+  width: 25px;
+  background: var(--gold);
+}
+
+/* =========================================
+   MOVING POSTER MARQUEE
+========================================= */
+
+.legacy-marquee {
+  display: block !important;
+  width: 100%;
+  overflow: hidden;
+  padding: 24px 0;
+  background: #10121a;
+  border-bottom: 1px solid var(--border);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: movie-marquee 45s linear infinite;
+}
+
+.legacy-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-poster {
+  width: 105px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+}
+
+.marquee-poster .poster-image-wrap {
+  height: 145px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.marquee-poster > span {
+  display: block;
+  margin-top: 8px;
+  overflow: hidden;
+  color: #d6d5da;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.marquee-poster:hover > span {
+  color: var(--gold-light);
+}
+
+@keyframes movie-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   MOVIES SECTION
+========================================= */
+
+.movies-section {
+  max-width: 1440px;
+  margin: auto;
+  padding: 75px 6%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(30px, 4vw, 43px);
+  letter-spacing: -1px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(100%, 280px);
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.search-box:focus-within {
+  border-color: var(--gold);
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+}
+
+.search-box input::placeholder {
+  color: #8d919f;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filters button {
+  padding: 9px 15px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface);
+  color: #b8bac5;
+  font-size: 11px;
+  transition: 0.2s;
+}
+
+.filters button:hover,
+.filters button.active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #171923;
+}
+
+.filters > span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   MOVIE CARDS AND POSTERS
+========================================= */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 30px 20px;
+}
+
+.movie-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--surface);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 153, 107, 0.4);
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  background: #202431;
+  text-align: left;
+}
+
+.poster-image-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  background: #202431;
+}
+
+.poster-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s;
+}
+
+.movie-card:hover .poster-image-wrap img,
+.marquee-poster:hover .poster-image-wrap img {
+  transform: scale(1.05);
+}
+
+.movie-card .poster {
+  aspect-ratio: 2 / 3;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: static;
+  z-index: auto;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: rgba(12, 14, 20, 0.9);
+  color: #ffc84b;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.poster-hover {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: fit-content;
+  height: auto;
+  padding: 6px 10px;
+  font-size: 10px;
+  line-height: 1.2;
+  white-space: nowrap;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+}
+
+.movie-card:hover .poster-hover {
+  opacity: 1;
+}
+
+.poster-fallback {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: linear-gradient(145deg, #252b38, #10121a);
+  color: var(--gold-light);
+  text-align: center;
+}
+
+.poster-fallback span {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.poster-fallback small {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.movie-info {
+  padding: 15px 13px 17px;
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold-light);
+  font-size: 10px;
+}
+
+.movie-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.movie-info h3 {
+  margin: 13px 0 8px;
+  overflow-wrap: anywhere;
+  color: white;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* =========================================
+   MOVIE DETAILS PAGE
+========================================= */
+
+.movie-details-page {
+  min-height: 75vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 55px 7%;
+  background: #10121a;
+}
+
+.details-backdrop {
+  position: absolute;
+  inset: -35px;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(22px);
+  opacity: 0.25;
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+.movie-details-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(9, 11, 17, 0.78);
+  pointer-events: none;
+}
+
+.details-page-content {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.movie-details-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 320px) minmax(0, 1fr);
+  align-items: center;
+  gap: 55px;
+}
+
+.details-poster {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.details-poster .poster-image-wrap {
+  aspect-ratio: 2 / 3;
+}
+
+.details-content h1 {
+  margin: 12px 0 20px;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+}
+
+.details-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.details-rating span {
+  color: var(--muted);
+}
+
+.details-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 28px;
+}
+
+.details-tags span {
+  padding: 7px 11px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(20, 22, 30, 0.75);
+  color: #d8d8df;
+  font-size: 11px;
+}
+
+.details-content h3 {
+  font-size: 16px;
+}
+
+.details-description {
+  max-width: 560px;
+  color: #c1c3cd;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.details-actions {
+  margin-top: 30px;
+}
+
+/* =========================================
+   ABOUT SECTION AND FOOTER
+========================================= */
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 70px 8%;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(120deg, #151821, #11131b);
+}
+
+.about h2 {
+  margin: 12px 0;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.25;
+}
+
+.about h2 em {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.about p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 28px 6%;
+  border-top: 1px solid var(--border);
+  background: #0a0b10;
+}
+
+footer > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* =========================================
+   OVERLAYS AND DIALOGS
+========================================= */
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+
+
+.booking-dialog {
+  width: min(100%, 570px);
+  max-height: none;
+  position: relative;
+  flex-shrink: 0;
+  overflow: visible;
+  padding: 30px;
+  border: 1px solid rgba(201, 153, 107, 0.3);
+  border-radius: 18px;
+  background: #151821;
+  color: white;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+}
+
+
+.booking-dialog h2 {
+  margin: 0 40px 24px 0;
+  color: white;
+  font-size: 25px;
+}
+
+.booking-dialog p {
+  line-height: 1.6;
+}
+
+.close {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: #252936;
+  color: white;
+}
+
+.close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.close:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* =========================================
+   LOGIN AND SIGNUP
+========================================= */
+
+.auth-dialog {
+  width: min(100%, 430px);
+  padding: 34px;
+  background: #171923 !important;
+  color: white !important;
+}
+
+.auth-dialog h2,
+.auth-dialog h3,
+.auth-dialog p,
+.auth-dialog label {
+  color: white;
+}
+
+.auth-dialog h2 {
+  padding-right: 25px;
+}
+
+.auth-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.auth-dialog .button,
+.auth-dialog button[type="submit"] {
+  width: 100%;
+  justify-content: center;
+  background: var(--gold) !important;
+  color: #171923 !important;
+  font-weight: 800;
+}
+
+.auth-dialog p {
+  margin-top: 22px;
+  color: #c2c4ce;
+  font-size: 12px;
+}
+
+.auth-dialog .text-button {
+  width: auto;
+  background: transparent !important;
+  color: var(--gold-light) !important;
+}
+
+/* =========================================
+   FORM INPUTS
+========================================= */
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0;
+  color: #e5e5eb;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-label svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.booking-dialog input,
+.booking-dialog select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #393e4d;
+  border-radius: 8px;
+  outline: none;
+  background: #202431;
+  color: white;
+  font-size: 13px;
+  color-scheme: dark;
+  transition: border-color 0.2s;
+}
+
+.booking-dialog input:focus,
+.booking-dialog select:focus {
+  border-color: var(--gold);
+}
+
+.booking-dialog input::placeholder {
+  color: #888d9c;
+}
+
+.booking-dialog select option {
+  background: #202431;
+  color: white;
+}
+
+/* =========================================
+   BOOKING DIALOG MOVIE HEADER
+========================================= */
+
+.booking-movie-dialog {
+  width: min(100%, 650px);
+  background: #151821;
+}
+
+.booking-movie-dialog .dialog-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 24px;
+  padding-right: 30px;
+}
+
+.dialog-heading > .poster-image-wrap,
+.dialog-heading .poster-image-wrap {
+  width: 92px;
+  height: 125px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.dialog-heading h2 {
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+.dialog-heading p {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================================
+   SHOWTIME BUTTONS
+========================================= */
+
+.times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 22px;
+}
+
+.times button {
+  padding: 10px 13px;
+  border: 1px solid #424756;
+  border-radius: 8px;
+  background: #202431;
+  color: #e2e2e8;
+  font-size: 11px;
+  transition: 0.2s;
+}
+
+.times button:hover:not(:disabled),
+.times button.time-active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #171923;
+}
+
+.times button:disabled {
+  opacity: 0.4;
+}
+
+/* =========================================
+   SEAT BOOKING HEADER
+========================================= */
+
+.seat-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.seat-heading .form-label {
+  margin: 10px 0;
+  flex-direction: row;
+  align-items: center;
+}
+
+.seat-heading > span {
+  color: var(--gold-light);
+  font-size: 11px;
+}
+
+/* =========================================
+   CINEMA SCREEN AND SEAT LAYOUT
+========================================= */
+
+
+/* =========================================
+   CINEMA SCREEN AND SEAT LAYOUT
+========================================= */
+
+.cinema-seat-layout {
+  width: 100%;
+  margin: 22px auto 18px;
+  padding: 12px 4px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #555b6d transparent;
+}
+
+.cinema-screen {
+  width: 78%;
+  max-width: 430px;
+  min-width: 240px;
+  margin: 0 auto 38px;
+  position: relative;
+  padding: 15px 0;
+  border-top: 4px solid var(--gold-light);
+  border-radius: 50% 50% 0 0 / 28px 28px 0 0;
+  box-shadow: 0 -10px 30px rgba(201, 153, 107, 0.2);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.screen-glow {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: linear-gradient(
+    to bottom,
+    rgba(201, 153, 107, 0.2),
+    transparent
+  );
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.cinema-screen span {
+  position: relative;
+}
+
+.seat-category-labels {
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  max-width: 430px;
+  margin: 0 auto 24px;
+  color: var(--gold-light);
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.cinema-seat-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.cinema-seat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.seat-row-label {
+  width: 12px;
+  flex-shrink: 0;
+  color: #b8bac5;
+  font-size: 10px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.cinema-seat-group {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.cinema-seat {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  position: relative;
+  padding: 0;
+  border: 1px solid #8aab98;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #647c70, #35483f);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 0.12),
+    0 3px 0 #26352e;
+  transition: transform 0.18s, background 0.18s;
+}
+
+.cinema-seat::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 3px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.16);
+  pointer-events: none;
+}
+
+.cinema-seat:not(:disabled):hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-light);
+}
+
+.cinema-seat.seat-selected {
+  border-color: #ffe0bc;
+  background: linear-gradient(145deg, #f0c89f, #c9996b);
+  color: #171923;
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 0.3),
+    0 3px 0 #805a3c;
+}
+
+.cinema-seat.unavailable {
+  border-color: #454752;
+  background: #454752;
+  color: #a0a2ac;
+  box-shadow: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.seat-aisle {
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.cinema-seat-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+  color: #d5d6dc;
+  font-size: 10px;
+}
+
+.cinema-seat-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-seat {
+  display: inline-block;
+  width: 15px;
+  height: 13px;
+  flex-shrink: 0;
+  border-radius: 5px 5px 3px 3px;
+}
+
+.available-seat {
+  border: 1px solid #718078;
+  background: #526b5e;
+}
+
+.selected-seat {
+  background: var(--gold);
+}
+
+.booked-seat {
+  background: #454752;
+  opacity: 0.7;
+}
+
+/* =========================================
+   BOOKING CHECKOUT
+========================================= */
+
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.checkout > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkout small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.checkout b {
+  color: var(--gold-light);
+  font-size: 23px;
+}
+
+.checkout .button {
+  flex-shrink: 0;
+  padding: 12px 15px;
+  font-size: 11px;
+}
+
+/* =========================================
+   MOBILE SEAT LAYOUT
+========================================= */
+
+@media (max-width: 520px) {
+  .seat-category-labels {
+    gap: 6px;
+    font-size: 8px;
+  }
+
+  .cinema-seat-layout {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+
+  .cinema-seat-rows {
+    gap: 14px;
+  }
+
+  .cinema-seat-group {
+    gap: 6px;
+  }
+
+  .cinema-seat {
+    width: 23px;
+    height: 25px;
+    font-size: 8px;
+  }
+
+  .seat-aisle {
+    width: 12px;
+  }
+
+  .cinema-seat-row {
+    gap: 7px;
+  }
+
+  .seat-row-label {
+    width: 10px;
+    font-size: 9px;
+  }
+
+  .cinema-seat-legend {
+    gap: 10px;
+    font-size: 9px;
+  }
+}
+
+/* FORCE VISIBLE SPACE BETWEEN CINEMA SEATS */
+.cinema-seat-layout .cinema-seat-rows .cinema-seat-row .cinema-seat-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.cinema-seat-layout .cinema-seat-rows {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  width: max-content !important;
+  margin: 0 auto !important;
+}
+
+.cinema-seat-layout .cinema-seat-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.cinema-seat-layout .cinema-seat {
+  flex: 0 0 29px !important;
+  width: 29px !important;
+  min-width: 29px !important;
+  height: 29px !important;
+  margin: 0 !important;
+}
+
+.cinema-seat-layout .seat-aisle {
+  flex: 0 0 24px !important;
+  width: 24px !important;
+}
+
+/* Separate Premium, Gold and Standard sections */
+.cinema-seat-layout .cinema-seat-rows {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  gap: 28px !important;
+  width: 100%;
+}
+
+.cinema-seat-layout .seat-category {
+  width: 100%;
+  padding: 14px 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.seat-category-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 8px 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.seat-category-premium .seat-category-heading {
+  color: #e0b58e;
+}
+
+.seat-category-gold .seat-category-heading {
+  color: #e5d18b;
+}
+
+.seat-category-standard .seat-category-heading {
+  color: #a9cbb8;
+}
+
+.cinema-seat-layout .cinema-seat-row {
+  display: flex !important;
+  justify-content: center;
+  gap: 10px !important;
+  margin-bottom: 12px;
+}
+
+.cinema-seat-layout .cinema-seat-group {
+  display: flex !important;
+  gap: 7px !important;
+}
+
+.cinema-seat-layout .cinema-seat {
+  flex: 0 0 25px !important;
+  width: 25px !important;
+  height: 27px !important;
+  margin: 0 !important;
+}
+
+.cinema-seat-layout .seat-aisle {
+  flex: 0 0 14px !important;
+  width: 14px !important;
+}
+
+.cinema-seat-layout .cinema-seat-row:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 520px) {
+  .cinema-seat-layout .seat-category {
+    padding: 12px 3px;
+  }
+
+  .cinema-seat-layout .cinema-seat-group {
+    gap: 4px !important;
+  }
+
+  .cinema-seat-layout .cinema-seat {
+    flex-basis: 21px !important;
+    width: 21px !important;
+    height: 23px !important;
+    font-size: 8px;
+  }
+
+  .cinema-seat-layout .seat-aisle {
+    flex-basis: 9px !important;
+    width: 9px !important;
+  }
+
+  .cinema-seat-layout .cinema-seat-row {
+    gap: 5px !important;
+  }
+
+  .seat-category-heading {
+    font-size: 10px;
+  }
+}
+
+/* Fix cropped poster and top of booking dialog */
+.overlay {
+  align-items: flex-start !important;
+  justify-content: center !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 20px 12px !important;
+}
+
+.booking-dialog,
+.booking-movie-dialog {
+  max-height: none !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
+}
+
+.booking-movie-dialog .dialog-heading {
+  position: relative;
+  margin-top: 0 !important;
+  padding-top: 8px;
+}
+
+.booking-movie-dialog .dialog-heading .poster-image-wrap {
+  flex-shrink: 0 !important;
+  width: 92px;
+  height: 125px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+@media (max-width: 520px) {
+  .overlay {
+    padding: 12px 8px !important;
+  }
+
+  .booking-dialog,
+  .booking-movie-dialog {
+    margin: 0 0 12px !important;
+    padding: 23px 16px !important;
+  }
+
+  .booking-movie-dialog .dialog-heading .poster-image-wrap {
+    width: 76px;
+    height: 105px;
+  }
+}
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.poster-hover {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto !important;
+  height: auto !important;
+  padding: 8px 12px !important;
+  font-size: 10px !important;
+  line-height: 1.2;
+  white-space: nowrap;
+  border-radius: 6px;
+  transform: translate(-50%, -50%);
+}
+
+/* Fix booking and ticket popup positioning */
+.overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+}
+
+.booking-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 500px;        /* Adjust width of the popup card */
+  background: #121824;     /* Solid background color so it stands out */
+  border-radius: 12px;     /* Smooth rounded corners */
+  padding: 30px;           /* Internal spacing */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+/* Keep content inside the popup */
+.booking-dialog .booking-summary {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.home-button {
+  display: block;
+  position: static;
+  margin: 16px auto;
+  background-color: #c9996b;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* My Bookings and ticket popup positioning */
+.overlay {
+  position: fixed;
+  top: 76px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 24px 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.booking-dialog {
+  position: relative;
+  flex: 0 1 570px;
+  width: 100%;
+  max-width: 570px;
+  min-width: 0;
+  height: fit-content;
+  max-height: none;
+
+  margin: 0 auto 24px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  overflow: visible;
+  border: 1px solid rgba(201, 153, 107, 0.3);
+  border-radius: 18px;
+  background: #151821;
+  color: white;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+}
+
+.booking-dialog .home-button {
+  display: block;
+  position: static;
+  margin: 24px auto 8px;
+}
+
+@media (max-width: 520px) {
+  .overlay {
+    top: 76px;
+    padding: 12px 8px;
+  }
+
+  .booking-dialog {
+    padding: 23px 16px;
+  }
+}
