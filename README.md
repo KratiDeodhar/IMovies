@@ -21,7 +21,7 @@ Start the backend server:npm start
 3. Configure FrontendOpen a new terminal tab and navigate to the frontend:cd frontend
 npm install
 npm run dev
-# Development server runs on http://localhost:5173
+# Visit the deployed website: https://kratideodhar-imovies.vercel.app/
 
 📡 API Endpoints SummaryEndpointMethodDescription/api/auth/registerPOSTRegister a new user account/api/auth/loginPOSTAuthenticate user & return JWT token/api/bookingsGETFetch active bookings for authenticated user/api/bookingsPOSTReserve new movie seats🛠 Future EnhancementsIntegration with payment gateways (Stripe / Razorpay).Interactive seat selection grid (rows and columns).QR code generation for digital tickets.
 
