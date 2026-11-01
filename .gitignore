@@ -5,3 +5,4 @@ dist/
 !.env.example
 backend/node_modules/
 backend/.env
+.vercel
