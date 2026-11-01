@@ -4,6 +4,7 @@
 
 A full-stack movie ticket booking web application built using the MERN stack (MongoDB, Express.js, React, Node.js) with Vite[cite: 3]. The application allows users to discover trending movies, view showtimes, select seats via a modern modal UI, and manage their cinema bookings[cite: 3].
 
+## 📂 Project Structure
 IMovies/
 ├── frontend/       # User interface and client-side code
 ├── backend/        # REST API, routes, and database models
