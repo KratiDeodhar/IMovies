@@ -82,7 +82,7 @@ IMovies/
 |  +---------------------------+             +---------------------------------+  |
 +---------------------------------------------------------------------------------+
 
-Getting Started
+##Getting Started
 Prerequisites
 Node.js (v16.x or higher)
 
@@ -107,6 +107,13 @@ Bash
 cd ../frontend
 npm install
 npm start
+
+##API Endpoints
+Endpoint	Method	Description	Request Body
+/api/auth/register	POST	Register a new user	{ "username": "user", "email": "user@example.com", "password": "pass" }
+/api/auth/login	POST	Authenticate user & issue token	{ "email": "user@example.com", "password": "pass" }
+/api/bookings	GET	Fetch active bookings for logged-in user	Header: Authorization: Bearer <token>
+/api/bookings	POST	Book new movie tickets	{ "movieId": "m101", "seats": 2, "showtime": "19:00" }
 👤 Author
 Krati Deodhar - GitHub Profile
 
